@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send({ response: "I am alive" }).status(200);
+  res.status(500).send({ response: "I am alive" });
 });
 // router.get("/api/", (req, res) => {
 //   res.send({ response: "api success" }).status(200);

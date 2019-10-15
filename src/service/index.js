@@ -24,7 +24,16 @@ service.interceptors.response.use(
     return response.data;
   },
   error => {
-    console.log('response: error==>>',error); // for debug
+
+    if(error.response){
+      console.log('error.response', error.response);
+    } else if(error.request){
+      console.log('error.request', error.request);
+    } else {
+      console.log('response: error', error);
+    }
+
+    console.log('response: error',error); // for debug
     return Promise.reject(error);
   }
 );

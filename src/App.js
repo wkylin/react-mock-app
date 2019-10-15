@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 // import axios from 'axios'
-import { login } from './service/api'
+import { login, serve504, serve500 } from './service/api'
 function App() {
 
   useEffect(() => {
     // axios.get(`http://localhost:4001/`)
     // axios.get(`http://localhost:4001/api/notfound`)
     // axios.get(`http://localhost:4001/api/login/`)
-    login({userName:'wkylin'})
+    // login({userName:'wkylin'})
+    serve504()
+    // serve500()
       .then(res => {
         console.log('res==>>', res);
       })
