@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 // import axios from 'axios'
 import { login, serve504, serve500 } from './service/api'
@@ -9,9 +8,8 @@ function App() {
     // axios.get(`http://localhost:4001/`)
     // axios.get(`http://localhost:4001/api/notfound`)
     // axios.get(`http://localhost:4001/api/login/`)
-    // login({userName:'wkylin'})
-    serve504()
-    // serve500()
+    login({userName:'wkylin'})
+    // serve504()
       .then(res => {
         console.log('res==>>', res);
       })
@@ -22,13 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-
+      <header className="App-header">Hello, React</header>
     </div>
   );
 }

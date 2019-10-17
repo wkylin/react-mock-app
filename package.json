@@ -3,21 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-app-rewired start",
+    "start:dev": "react-app-rewired start",
+    "start:test": "env-cmd -f .env.test react-app-rewired start",
+    "start:mockServer": "concurrently \"yarn run start:mock\" \"yarn run mockServer\"",
+    "build:buildServer": "yarn run build && yarn run buildServer",
     "build": "react-app-rewired build",
+    "buildServer": "serve -s build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "build:serve": "cd build && serve",
-    "mock": "concurrently \"nodemon ./mock/routes/index.js\" \"cd mock && node app.js\" "
+    "start:mock": "env-cmd -f .env.mock react-app-rewired start",
+    "mockServer": "concurrently \"nodemon ./mock/routes/index.js\" \"cd mock && node app.js\"",
+    "mock": "cd mock && node app.js"
   },
   "dependencies": {
     "antd": "^3.24.0",
     "axios": "^0.19.0",
     "babel-plugin-import": "^1.12.2",
+    "classnames": "^2.2.6",
     "customize-cra": "^0.8.0",
     "js-cookie": "^2.2.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "qs": "^6.9.0",
     "react": "^16.10.2",
     "react-app-rewired": "^2.1.3",
@@ -26,7 +34,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.0.0",
+    "env-cmd": "^10.0.1",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
     "nodemon": "^1.19.3",
     "serve": "^11.2.0"
   },

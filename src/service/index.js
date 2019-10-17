@@ -6,7 +6,7 @@ import qs from 'qs'
 // 创建axios实例
 const service = axios.create({
   // baseURL: 'http://localhost:3000',
-  baseURL: 'http://localhost:4001',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   timeout: 15000, // 请求超时时间,
   transformRequest: [function (data) {
     return qs.stringify(data)
