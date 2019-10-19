@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:dev": "react-app-rewired start",
+    "start:dev": "env-cmd -f .env.development react-app-rewired start",
     "start:test": "env-cmd -f .env.test react-app-rewired start",
     "start:mockServer": "concurrently \"yarn run start:mock\" \"yarn run mockServer\"",
     "build:buildServer": "yarn run build && yarn run buildServer",
-    "build": "react-app-rewired build",
+    "build": "env-cmd -f .env.production react-app-rewired build --profile",
     "buildServer": "serve -s build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
@@ -30,9 +30,11 @@
     "react": "^16.10.2",
     "react-app-rewired": "^2.1.3",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   },
   "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
     "env-cmd": "^10.0.1",

@@ -1,11 +1,14 @@
-const { override, fixBabelImports, addLessLoader } = require('customize-cra');
-
-// module.exports = function override(config, env) {
-//   // do stuff with the webpack config...
-//   return config;
-// };
-
+const { override, fixBabelImports, addLessLoader, disableEsLint } = require('customize-cra');
+const webpackConfig = require('./webpack.config');
+const addWebpackModules = () => (config, env) => {
+  config.optimization.minimizer.push(...webpackConfig.optimization.minimizer);
+  // console.log('env==>>', env);
+  // console.log('config==>>', config);
+  return config;
+};
 module.exports = override(
+  disableEsLint(),
+  addWebpackModules(),
   fixBabelImports('import', {
     libraryName:'antd',
     libraryDirectory:'es',
@@ -19,3 +22,8 @@ module.exports = override(
     },
   })
 );
+
+// module.exports = function override(config, env) {
+//   // do stuff with the webpack config...
+//   return config;
+// };
