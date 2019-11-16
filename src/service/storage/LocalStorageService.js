@@ -1,39 +1,32 @@
-const LocalStorageService = (function () {
-  let _service;
-
-  function _getService() {
-    if (!_service) {
-      _service = this;
-      return _service
-    }
-    return _service
+const localStorageService = (function() {
+  function setAccessToken(token) {
+    localStorage.setItem('accessToken', token);
   }
 
-  function _setToken(tokenObj) {
-    localStorage.setItem('access_token', tokenObj.access_token );
-    localStorage.setItem('refresh_token', tokenObj.refresh_token );
+  function setRefreshToken(token) {
+    localStorage.setItem('refreshToken', token);
   }
 
-  function _getAccessToken() {
-    return localStorage.getItem('access_token');
+  function getAccessToken() {
+    return localStorage.getItem('accessToken');
   }
 
-  function _getRefreshToken() {
-    return localStorage.getItem('refresh_token');
+  function getRefreshToken() {
+    return localStorage.getItem('refreshToken');
   }
 
-  function _clearToken() {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
+  function clearToken() {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
   }
 
   return {
-    getService: _getService,
-    setToken: _setToken,
-    getAccessToken: _getAccessToken,
-    getRefreshToken: _getRefreshToken,
-    clearToken: _clearToken
-  }
+    setAccessToken: setAccessToken,
+    setRefreshToken: setRefreshToken,
+    getAccessToken: getAccessToken,
+    getRefreshToken: getRefreshToken,
+    clearToken: clearToken
+  };
 })();
 
-export default LocalStorageService;
+export default localStorageService;
