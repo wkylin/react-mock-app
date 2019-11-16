@@ -70,6 +70,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,less,md}": [
+      "eslint --fix",
       "prettier --single-quote --write",
       "git add"
     ]
