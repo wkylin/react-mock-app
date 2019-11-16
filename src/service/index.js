@@ -1,26 +1,28 @@
 import axios from 'axios';
 import { getToken, removeToken, setToken } from '../utils/auth';
-import qs from 'qs'
-import { message } from 'antd'
+import qs from 'qs';
+import { message } from 'antd';
 
 // 创建axios实例
 const service = axios.create({
   // baseURL: 'http://localhost:3000',
   baseURL: process.env.REACT_APP_API_BASE_URL,
   timeout: 15000, // 请求超时时间,
-  transformRequest: [function (data) {
-    return qs.stringify(data)
-  }],
+  transformRequest: [
+    function(data) {
+      return qs.stringify(data);
+    }
+  ]
 });
 
-service.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=UTF-8";
-service.defaults.headers["X-Requested-With"] = "XMLHttpRequest";
+service.defaults.headers.post['Content-Type'] =
+  'application/x-www-form-urlencoded;charset=UTF-8';
+service.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
 
-const queue = {};//使用队列解决多个请求加载问题
+const queue = {}; //使用队列解决多个请求加载问题
 // request.interceptors
 service.interceptors.request.use(
-  (config) => {
-
+  config => {
     queue[config.baseURL + config.url] = true;
     message.loading('loading');
     if (getToken()) {
@@ -28,11 +30,11 @@ service.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-  // Do something with request error
-  console.log('request: error==>>', error);// for debug
+  error => {
+    // Do something with request error
+    console.log('request: error==>>', error); // for debug
 
-  return Promise.reject(error);
+    return Promise.reject(error);
   }
 );
 
@@ -52,7 +54,11 @@ service.interceptors.response.use(
         // Vue.$loading.hide();
       }
       // console.log(queue);
-      if (response && response.config && response.config.responseType === "blob") {
+      if (
+        response &&
+        response.config &&
+        response.config.responseType === 'blob'
+      ) {
         resolve(response.data);
         return;
       }
@@ -81,10 +87,10 @@ service.interceptors.response.use(
       }
       // message.loading('loading');
       //请求超时
-      if (error.message.includes("timeout")) {
-        message.error("请求超时,请检查互联网连接后重试");
+      if (error.message.includes('timeout')) {
+        message.error('请求超时,请检查互联网连接后重试');
       } else {
-        message.error("请检查网络是否已连接");
+        message.error('请检查网络是否已连接');
       }
       return Promise.reject(error);
     }
@@ -96,20 +102,20 @@ service.interceptors.response.use(
     const status = error.response.status;
     switch (status) {
       case 500:
-        message.error("服务器错误");
+        message.error('服务器错误');
         break;
       case 404:
-        message.error("未找到远程服务器");
+        message.error('未找到远程服务器');
         break;
       case 401:
         // router.replace({
         //   path: '/'
         // });
-        message.warning("当前登录已失效，请重新登陆");
+        message.warning('当前登录已失效，请重新登陆');
         removeToken();
         break;
       case 400:
-        message.error("数据异常");
+        message.error('数据异常');
         break;
       default:
         message.error(error.response.data.message);
@@ -128,9 +134,9 @@ export default service;
 export function get(url, params) {
   return new Promise((resolve, reject) => {
     axios
-      .get(url, ({
+      .get(url, {
         params
-      }))
+      })
       .then(res => {
         resolve(res);
       })
@@ -185,7 +191,7 @@ export function download(url, { params }) {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        responseType: 'blob',
+        responseType: 'blob'
       })
       .then(res => {
         resolve(res);
