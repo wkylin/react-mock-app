@@ -19,6 +19,7 @@ class CopyTable extends Component {
 
   // 复制表格
   myTableForCopy = index => {
+    // event.nativeEvent.stopImmediatePropagation();
     this.copyToClipboard(this.myTableRef[index].innerHTML);
   };
   copyToClipboard = str => {
