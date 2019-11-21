@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.scss';
+import './index.css';
 
 class NotAuth extends Component {
   render() {

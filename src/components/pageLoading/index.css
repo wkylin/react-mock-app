@@ -8,13 +8,13 @@
   right: 0;
   z-index: 11111111;
   background: rgba(0, 0, 0, 0.4);
+}
 
-  .ant-spin-dot-spin {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin: -20px -20px;
-  }
+.ant-spin-dot-spin {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin: -20px -20px;
 }
 
 .pageLoadingError {

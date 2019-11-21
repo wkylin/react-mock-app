@@ -4,15 +4,10 @@
   --success-color: #55c0ff;
   --warning-color: #faad14;
   --error-color: #f5222d;
-  --text-color: #333;
-  --text-color-secondary: #666;
   --disabled-color: rgba(0, 0, 0, 0.25);
   --border-color: #d9d9d9;
   --hover-color: #f7f7f7;
   --background-gray-color: #f7f7f7;
-  --background-dark-gray-color: #f7f7f7;
-  --font-size-base: 14px;
-  --global-header-height: 60px;
 }
 
 html {
@@ -23,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: PingFangSC-Regular, -apple-system, BlinkMacSystemFont, SFNSText,
-  'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+    'Helvetica Neue', 'Microsoft YaHei', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +27,7 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+    monospace;
 }
 
 mark {

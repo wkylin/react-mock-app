@@ -60,6 +60,7 @@
     "nodemon": "^2.0.0",
     "prettier": "^1.19.1",
     "react-app-rewired": "^2.1.5",
+    "scss-lint": "^0.0.0",
     "serve": "^11.2.0",
     "terser-webpack-plugin": "^2.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0"

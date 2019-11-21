@@ -1,4 +1,4 @@
-.layout {
+.layoutAuto {
   height: 100%;
   overflow: auto;
 }
@@ -8,12 +8,20 @@
   height: 100%;
 }
 
+.layoutContent {
+  height: 100%;
+}
+
+.layoutSider {
+  height: 100%;
+}
 .layoutHeader {
   padding: 0;
   line-height: 1.5;
-  height:auto;
+  height: auto;
   background: #fff;
 }
+
 .layoutFooter {
   padding: 0;
   line-height: 1.5;

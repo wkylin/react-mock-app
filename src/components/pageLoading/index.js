@@ -1,8 +1,7 @@
+import { Spin } from 'antd';
 import React from 'react';
 
-import { Spin } from 'antd';
-
-import './index.scss';
+import './index.css';
 
 const PageLoading = ({ isLoading, error }) => {
   if (isLoading) {
