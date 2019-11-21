@@ -1,0 +1,253 @@
+:root {
+  --primary-color: #55c0ff;
+  --link-color: #55c0ff;
+  --success-color: #55c0ff;
+  --warning-color: #faad14;
+  --error-color: #f5222d;
+  --text-color: #333;
+  --text-color-secondary: #666;
+  --disabled-color: rgba(0, 0, 0, 0.25);
+  --border-color: #d9d9d9;
+  --hover-color: #f7f7f7;
+  --background-gray-color: #f7f7f7;
+  --background-dark-gray-color: #f7f7f7;
+  --font-size-base: 14px;
+  --global-header-height: 60px;
+}
+
+html {
+  min-width: 980px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, -apple-system, BlinkMacSystemFont, SFNSText,
+    'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f7f7f7;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+mark {
+  background-color: #fff0d7;
+  padding: 0;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+#root,
+.root-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.globalHeader {
+  position: relative;
+  z-index: 100;
+  --header-hover-bg: rgba(0, 0, 0, 0.025);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  padding-left: 30px;
+  padding-right: 18px;
+  background-color: #fff;
+  height: var(--global-header-height);
+  line-height: var(--global-header-height);
+}
+
+.ant-layout-header {
+  background: #fff;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  transition-property: color;
+  color: var(--text-color);
+}
+
+.btn-text[disabled] {
+  background-color: transparent !important;
+}
+
+.btn-text:after {
+  display: none;
+}
+
+.btn-text:focus {
+  outline: none;
+  color: var(--text-color);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--text-color-secondary) !important;
+}
+
+.color-link,
+.color-link:focus {
+  color: var(--link-color);
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.layout-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+textarea.ant-input {
+  transition-property: color;
+}
+
+.checkbox-button {
+  position: relative;
+  border: 1px solid var(--border-color);
+  padding: 0 15px;
+  line-height: 40px;
+}
+
+.checkbox-button .ant-checkbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.checkbox-button.ant-checkbox-wrapper-checked {
+  border-color: var(--primary-color);
+}
+
+.checkbox-button .ant-checkbox-inner {
+  border: none;
+  transition: none;
+}
+
+.checkbox-button.ant-checkbox-wrapper-checked .ant-checkbox-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 32px 32px 0;
+  border-style: solid;
+  border-color: transparent var(--primary-color) transparent transparent;
+}
+
+.ant-anchor-ink:before {
+  background: #fff;
+}
+
+.ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-nav .ant-tabs-tab:hover {
+  color: var(--text-color);
+}
+
+.ant-tabs-nav .ant-tabs-tab-active {
+  font-weight: bold;
+}
+
+.ant-dropdown-menu {
+  padding: 0;
+}
+
+.ant-dropdown-menu-item-divider {
+  margin: 0;
+}
+
+.bf-font-size-dropdown {
+  min-width: 90px;
+}
+
+.user-info-btn {
+  z-index: 1100;
+}
+
+.message-box-wrap,
+.scheduler-box-wrap {
+  padding-top: 6px !important;
+}
+
+.message-box-wrap > .ant-popover-content,
+.scheduler-box-wrap > .ant-popover-content {
+  width: 400px;
+  height: 500px;
+}
+
+.message-box-wrap .ant-popover-inner-content,
+.scheduler-box-wrap .ant-popover-inner-content {
+  padding: 0;
+}
+
+.message-box-wrap ul,
+.message-box-wrap li {
+  list-style: none;
+}
+
+.message-box-wrap ul {
+  padding: 0;
+}
+
+.ant-calendar-picker-container .ant-calendar-range .ant-calendar-input {
+  text-align: center;
+}
+
+.alert-time-options {
+  z-index: 1100;
+}
+
+.alert-time-options .ant-select-dropdown-menu-item {
+  font-size: 12px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.alert-time-options .ant-select-dropdown-menu-item:hover {
+  background: #fafafa;
+}
+
+.alert-time-options .ant-select-dropdown-menu-item-selected,
+.alert-time-options .ant-select-dropdown-menu-item-selected:hover {
+  font-weight: normal;
+  background: #f0fcff;
+}
+
+.remind-delay-select {
+  z-index: 1100;
+}

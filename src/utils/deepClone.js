@@ -7,7 +7,6 @@ function deepClone(target) {
   let result;
   let type = checkType(target);
   if (type === 'Object') {
-    //要先给返回值赋类型！
     result = {};
   } else if (type === 'Array') {
     result = [];
@@ -16,13 +15,10 @@ function deepClone(target) {
     return;
   }
   for (let i in target) {
-    // noinspection JSUnfilteredForInLoop
     valueType = checkType(target[i]);
     if (valueType === 'Object' || valueType === 'Array') {
-      // noinspection JSUnfilteredForInLoop
-      result[i] = deepClone(target[i]); //要给返回值赋值！
+      result[i] = deepClone(target[i]);
     } else {
-      // noinspection JSUnfilteredForInLoop
       result[i] = target[i];
     }
   }

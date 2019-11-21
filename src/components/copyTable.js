@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-// function mapStateToProps(state) {
-//   return {};
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//   return {};
-// }
+function mapStateToProps(state) {
+  return {};
+}
+
+function mapDispatchToProps(dispatch) {
+  return {};
+}
 
 class CopyTable extends Component {
   constructor(props) {
@@ -85,5 +85,4 @@ class CopyTable extends Component {
   }
 }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(CopyTable);
-export default CopyTable;
+export default connect(mapStateToProps, mapDispatchToProps)(CopyTable);
