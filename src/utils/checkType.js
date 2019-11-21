@@ -3,9 +3,7 @@ function checkType(target) {
 }
 
 export function randomHex() {
-  const hexStr = Math.floor(Math.random() * 0xffffff)
-    .toString(16)
-    .toUpperCase();
+  const hexStr = Math.floor(Math.random() * 0xffffff).toString(16).toUpperCase();
   return `#${hexStr}`;
 }
 

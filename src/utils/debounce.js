@@ -1,13 +1,14 @@
 export function debounce(func, wait = 20, immediate = true) {
   let timeout;
-  return function() {
-    let context = this,
-      args = arguments;
-    let later = function() {
+  return function () {
+    const context = this;
+    // eslint-disable-next-line prefer-rest-params
+    const args = arguments;
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
-    let callNow = immediate && !timeout;
+    const callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
@@ -17,7 +18,7 @@ export function debounce(func, wait = 20, immediate = true) {
 // ES6 code
 export function throttled(delay, fn) {
   let lastCall = 0;
-  return function(...args) {
+  return function (...args) {
     const now = Date.now();
     if (now - lastCall < delay) {
       return;

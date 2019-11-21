@@ -1,0 +1,20 @@
+.layout {
+  height: 100%;
+  overflow: auto;
+}
+
+.layoutHide {
+  overflow: hidden;
+  height: 100%;
+}
+
+.layoutHeader {
+  padding: 0;
+  line-height: 1.5;
+  height:auto;
+  background: #fff;
+}
+.layoutFooter {
+  padding: 0;
+  line-height: 1.5;
+}

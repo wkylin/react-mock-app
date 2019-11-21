@@ -11,17 +11,15 @@ class AuthorizedRoute extends Component {
     return (
       <Route
         {...rest}
-        render={props => {
-          return isLogin ? (
-            userRole ? (
-              <Component {...props} />
-            ) : (
-              <Redirect to="/notAuth" />
-            )
+        render={(props) => (isLogin ? (
+          userRole ? (
+            <Component {...props} />
           ) : (
-            <Redirect to="/login" />
-          );
-        }}
+            <Redirect to="/notAuth" />
+          )
+        ) : (
+          <Redirect to="/login" />
+        ))}
       />
     );
   }

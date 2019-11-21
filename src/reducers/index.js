@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import dataFetch from '../components/appLayout/reducer';
 
 const rootReducer = combineReducers({
-  dataFetch
+  dataFetch,
 });
 
 export default rootReducer;

@@ -1,4 +1,4 @@
-//数组去重--obj
+// 数组去重--obj
 // function distinctObj(arr, key) {
 //   let i, j, result = [], len = arr.length;
 //   for (i = 0; i < len; i++) {
@@ -13,8 +13,8 @@
 // }
 
 function distinctObj(arrObj, keyName) {
-  let hashObj = {};
-  return arrObj.reduce(function(item, next) {
+  const hashObj = {};
+  return arrObj.reduce((item, next) => {
     if (!hashObj[next[keyName]]) {
       hashObj[next[keyName]] = item.push(next);
     }

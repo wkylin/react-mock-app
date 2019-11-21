@@ -1,4 +1,6 @@
-import { take, put, call, fork, select } from 'redux-saga/effects';
+import {
+  take, put, call, fork, select,
+} from 'redux-saga/effects';
 import { message } from 'antd';
 import * as actions from './action';
 import * as api from '../../service/api';

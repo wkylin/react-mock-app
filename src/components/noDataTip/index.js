@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './index.less';
+import './index.scss';
 
 class NoDataTip extends Component {
   render() {
     const { tipInfo } = this.props;
     return (
       <div className="noDataTip">
-        {tipInfo ? tipInfo : '暂无数据/(ㄒoㄒ)/~~'}
+        {tipInfo || '暂无数据/(ㄒoㄒ)/~~'}
       </div>
     );
   }

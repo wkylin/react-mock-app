@@ -1,4 +1,4 @@
-const localStorageService = (function() {
+const localStorageService = (function () {
   function setAccessToken(token) {
     localStorage.setItem('accessToken', token);
   }
@@ -21,12 +21,12 @@ const localStorageService = (function() {
   }
 
   return {
-    setAccessToken: setAccessToken,
-    setRefreshToken: setRefreshToken,
-    getAccessToken: getAccessToken,
-    getRefreshToken: getRefreshToken,
-    clearToken: clearToken
+    setAccessToken,
+    setRefreshToken,
+    getAccessToken,
+    getRefreshToken,
+    clearToken,
   };
-})();
+}());
 
 export default localStorageService;

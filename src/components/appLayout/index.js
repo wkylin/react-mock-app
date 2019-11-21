@@ -2,32 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Layout } from 'antd';
-import styles from './index.less';
+import styles from './index.scss';
 
-const { Header, Footer, Sider, Content } = Layout;
+
+const {
+  Header, Footer, Sider, Content
+} = Layout;
 
 class AppLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  
   componentDidMount() {
     // console.log(this.props);
   }
-
+  
   render() {
     return (
-      <div className={styles.container}>
-        <Layout>
-          <Header>Header</Header>
-          <Layout>
-            <Content>Content</Content>
-            <Sider>Sider</Sider>
-          </Layout>
-          <Footer>Footer</Footer>
+      <Layout className="layoutHide">
+        <Header className="layoutHeader">Header</Header>
+        <Layout className="layoutHide">
+          <Content>Content</Content>
+          <Sider>Sider</Sider>
         </Layout>
-      </div>
+        <Footer className="layoutFooter">Footer</Footer>
+      </Layout>
     );
   }
 }

@@ -5,7 +5,7 @@ function checkType(target) {
 function deepClone(target) {
   let valueType;
   let result;
-  let type = checkType(target);
+  const type = checkType(target);
   if (type === 'Object') {
     result = {};
   } else if (type === 'Array') {
@@ -14,7 +14,7 @@ function deepClone(target) {
     result = target;
     return;
   }
-  for (let i in target) {
+  for (const i in target) {
     valueType = checkType(target[i]);
     if (valueType === 'Object' || valueType === 'Array') {
       result[i] = deepClone(target[i]);

@@ -13,8 +13,10 @@ function createRequestTypes(base) {
 function action(type, payload = {}) {
   return {
     type,
-    ...payload
+    ...payload,
   };
 }
 
-export { action, createRequestTypes, REQUEST, SUCCESS, FAILURE };
+export {
+  action, createRequestTypes, REQUEST, SUCCESS, FAILURE,
+};
