@@ -7,3 +7,5 @@ const FunctionAsChild = ({ children }) => children()
 const HoC = Component => EnhancedComponent
 
 yarn upgrade caniuse-lite browserslist
+
+yarn update --latest
