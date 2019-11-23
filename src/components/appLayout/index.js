@@ -37,7 +37,7 @@ class AppLayout extends Component {
             <Breadcrumb.Item>List</Breadcrumb.Item>
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
-          <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
+          <div style={{ background: '#fff', padding: 24, minHeight: 1080 }}>
             <div>Content</div>
             <h1 className="animated bounce delay-2s">Example</h1>
           </div>
