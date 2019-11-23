@@ -14,10 +14,11 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "start:mock": "env-cmd -f .env.mock react-app-rewired start",
-    "mockServer": "concurrently \"nodemon ./mock/routes/index.js\" \"cd mock && node app.js\"",
+    "mockServer": "concurrently \"nodemon ./mock/routes/index.js\" \"yarn run mock\"",
     "mock": "cd mock && node app.js"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "antd": "^3.25.2",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",

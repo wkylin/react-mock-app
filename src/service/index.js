@@ -1,6 +1,6 @@
+import { message } from 'antd';
 import axios from 'axios';
 import qs from 'qs';
-import { message } from 'antd';
 import { getToken, removeToken, setToken } from '../utils/auth';
 
 // 创建axios实例
@@ -32,7 +32,6 @@ $http.interceptors.request.use(
   (error) => {
     // Do something with request error
     console.log('request: error==>>', error);
-
     return Promise.reject(error);
   },
 );
@@ -54,13 +53,13 @@ $http.interceptors.response.use(
     // console.log(queue);
     if (
       response
-        && response.config
-        && response.config.responseType === 'blob'
+      && response.config
+      && response.config.responseType === 'blob'
     ) {
       resolve(response.data);
       return;
     }
-    if (response.data.status === true) {
+    if (response.data.status === 1) {
       resolve(response.data.data);
       message.success(response.data.message);
     } else {
@@ -91,7 +90,7 @@ $http.interceptors.response.use(
       }
       return Promise.reject(error);
     }
-
+    
     if (error.response && error.response.data && error.response.data.errors) {
       const keys = Object.keys(error.response.data.errors);
       message.error(error.response.data.errors[keys[0]]);
@@ -114,6 +113,9 @@ $http.interceptors.response.use(
       case 400:
         message.error('数据异常');
         break;
+      case 504:
+        message.error('Gateway Timeout');
+        break;
       default:
         message.error(error.response.data.message);
     }
@@ -130,14 +132,13 @@ export default $http;
  */
 export function get(url, params) {
   return new Promise((resolve, reject) => {
-    axios
-      .get(url, {
-        params,
-      }).then((res) => {
-        resolve(res);
-      }).catch((err) => {
-        reject(err);
-      });
+    axios.get(url, {
+      params
+    }).then((res) => {
+      resolve(res);
+    }).catch((err) => {
+      reject(err);
+    });
   });
 }
 
@@ -148,60 +149,56 @@ export function get(url, params) {
  */
 export function post(url, params) {
   return new Promise((resolve, reject) => {
-    axios
-      .post(url, params).then((res) => {
-        resolve(res);
-      }).catch((err) => {
-        reject(err);
-      });
+    axios.post(url, params).then((res) => {
+      resolve(res);
+    }).catch((err) => {
+      reject(err);
+    });
   });
 }
 
 // 上传
 export function upload(url, data) {
   return new Promise((resolve, reject) => {
-    axios
-      .post(url, data.formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      }).then((res) => {
-        resolve(res);
-      }).catch((err) => {
-        reject(err);
-      });
+    axios.post(url, data.formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then((res) => {
+      resolve(res);
+    }).catch((err) => {
+      reject(err);
+    });
   });
 }
 
 // 下载
 export function download(url, { params }) {
   return new Promise((resolve, reject) => {
-    axios
-      .get(url, {
-        params,
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-        },
-        responseType: 'blob',
-      }).then((res) => {
-        resolve(res);
-      }).catch((err) => {
-        reject(err);
-      });
+    axios.get(url, {
+      params,
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      responseType: 'blob'
+    }).then((res) => {
+      resolve(res);
+    }).catch((err) => {
+      reject(err);
+    });
   });
 }
 
 // 下载 backDocument
 export function backDocument(url, params) {
   return new Promise((resolve, reject) => {
-    axios
-      .get(url, {
-        params,
-        responseType: 'document',
-      }).then((res) => {
-        resolve(res);
-      }).catch((err) => {
-        reject(err);
-      });
+    axios.get(url, {
+      params,
+      responseType: 'document'
+    }).then((res) => {
+      resolve(res);
+    }).catch((err) => {
+      reject(err);
+    });
   });
 }

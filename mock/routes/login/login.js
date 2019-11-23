@@ -2,7 +2,7 @@ const login = function (req, res) {
   res.send({ user: { userName: 'wkylin', token: 'xxxxxx' } }).status(200);
 };
 const logout = function (req, res) {
-  res.send({ loginOut: { token: 'xxxxx' } }).status(200);
+  res.send({ status: 1, data: { logout: true }, message: 'success' }).status(200);
 };
 
 const notFound = function (req, res) {

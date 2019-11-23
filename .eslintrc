@@ -41,6 +41,7 @@
     "no-trailing-spaces": "off",
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default-member": "off",
     "func-names": "off"
   },
   "extends": "airbnb",
