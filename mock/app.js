@@ -5,6 +5,7 @@ const port = process.env.PORT || 4001;
 const index = require('./routes/index');
 
 const app = express();
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:5000'); // axios withCredentials: true时不能使用*
   // res.header('Access-Control-Allow-Origin', '*');
@@ -13,6 +14,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
+
 app.use(index);
 
 const server = http.createServer(app);
