@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: PingFangSC-Regular, -apple-system, BlinkMacSystemFont, SFNSText,
-    'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+  'Helvetica Neue', 'Microsoft YaHei', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(18, 208, 161);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -47,13 +47,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: rgb(18, 165, 128);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 mark {

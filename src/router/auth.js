@@ -4,16 +4,18 @@ import { Redirect, Route } from 'react-router-dom';
 
 class AuthorizedRoute extends Component {
   render() {
-    const { component: Component, ...rest } = this.props;
-    const userInfo = window.localStorage.getItem('userInfo');
-    const isLogin = !!userInfo && userInfo.name;
-    const userRole = userInfo && userInfo.role === 'admin';
+    const { component: CusComponent, ...rest } = this.props;
+    // const userInfo = window.localStorage.getItem('userInfo');
+    // const isLogin = !!userInfo && userInfo.name;
+    // const userRole = userInfo && userInfo.role === 'admin';
+    const isLogin = true;
+    const userRole = true;
     return (
       <Route
         {...rest}
         render={(props) => (isLogin ? (
           userRole ? (
-            <Component {...props} />
+            <CusComponent {...props} />
           ) : (
             <Redirect to="/notAuth" />
           )

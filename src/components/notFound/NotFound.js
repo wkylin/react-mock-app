@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './index.css';
+import styles from './NotFound.module.css';
 
 class NotFound extends Component {
   render() {
     return (
-      <div className="notFound">
+      <div className={styles.notFound}>
         <h1>404</h1>
         <h3>抱歉,没找到页面!┭┮﹏┭┮</h3>
       </div>

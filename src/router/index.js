@@ -6,8 +6,8 @@
 // };
 
 // 子路由
-// const ShowSubOne = loadComponent(() => import('views/show/one/index.js'));
-// const ShowSubTwo = loadComponent(() => import('views/show/two/index.js'));
+// const ShowSubOne = loadComponent(() => import('views/show/one/NoDataTip.js'));
+// const ShowSubTwo = loadComponent(() => import('views/show/two/NoDataTip.js'));
 
 export default {
   // ShowSubOne,
