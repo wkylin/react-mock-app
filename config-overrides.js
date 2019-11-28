@@ -1,5 +1,15 @@
+const path = require('path');
+
+function resolve(dir) {
+  return path.join(__dirname, '.', dir);
+}
 const {
-  override, fixBabelImports, addLessLoader, disableEsLint,
+  override,
+  fixBabelImports,
+  addLessLoader,
+  disableEsLint,
+  addWebpackAlias,
+  babelInclude,
 } = require('customize-cra');
 const webpackConfig = require('./webpack.config');
 
@@ -23,6 +33,21 @@ module.exports = override(
       '@primary-color': '#55c0ff',
       '@success-color': '#55c0ff',
     },
+  }),
+  babelInclude([
+    path.resolve('src'),
+  ]),
+  addWebpackAlias({
+    // '@': resolve('src'),
+    // components: path.resolve(__dirname, 'src/components'),
+    // router: path.resolve(__dirname, 'src/router'),
+    // api: path.resolve(__dirname, 'src/api'),
+    // store: path.resolve(__dirname, 'src/store'),
+    // reducers: path.resolve(__dirname, 'src/reducers'),
+    // sagas: path.resolve(__dirname, 'src/sagas'),
+    // assets: path.resolve(__dirname, 'src/assets,'),
+    // mock: path.resolve(__dirname, 'mock'),
+    // utils: path.resolve(__dirname, 'src/utils')
   }),
 );
 

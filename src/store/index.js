@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -13,7 +13,12 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(persistedReducer, applyMiddleware(sagaMiddleware));
+const middleWares = [];
+const storeEnhancers = compose(
+  applyMiddleware(...middleWares, sagaMiddleware)
+);
+
+const store = createStore(persistedReducer, storeEnhancers);
 sagaMiddleware.run(rootSaga);
 
 export default store;

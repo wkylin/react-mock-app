@@ -68,5 +68,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 // "mockServer": "concurrently \"nodemon ./mock/routes/NoDataTip.js\" \"cd mock && node app.js\""
-
-// 

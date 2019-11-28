@@ -3,7 +3,7 @@ import {
 } from 'redux-saga/effects';
 import { message } from 'antd';
 import * as actions from './action';
-import * as api from '../../service/api';
+import * as api from '../../api/api';
 
 function* contractReview(data) {
   const res = yield call(api.corsLogin, data);

@@ -16,6 +16,8 @@ import store from '../store/index';
 
 import PageLoading from '../components/pageLoading/PageLoading';
 
+import MyErrorBoundary from '../components/errorBoundaries/MyErrorBoundaries';
+
 const Login = lazy(() => import('../components/loginApp/LoginApp'));
 const NotFound = lazy(() => import('../components/notFound/NotFound'));
 const NotAuth = lazy(() => import('../components/notAuth/NotAuth'));
@@ -31,15 +33,17 @@ class Root extends PureComponent {
         <PersistGate loading={null} persistor={persistor}>
           <ConfigProvider locale={zhCN}>
             <Router>
-              <Suspense fallback={<PageLoading isLoading />}>
-                <Switch>
-                  <Redirect path="/" exact to="/app" />
-                  <AuthorizedRoute exact path="/app" component={App} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/notAuth" component={NotAuth} />
-                  <Route component={NotFound} />
-                </Switch>
-              </Suspense>
+              <MyErrorBoundary>
+                <Suspense fallback={<PageLoading isLoading />}>
+                  <Switch>
+                    <Redirect path="/" exact to="/app" />
+                    <AuthorizedRoute exact path="/app" component={App} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/notAuth" component={NotAuth} />
+                    <Route component={NotFound} />
+                  </Switch>
+                </Suspense>
+              </MyErrorBoundary>
             </Router>
           </ConfigProvider>
         </PersistGate>
