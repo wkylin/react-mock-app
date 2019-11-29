@@ -18,3 +18,4 @@ $ vi ~/.gitconfig (全局的Git配置文件)
 "lint-staged": "^9.4.3",
 "pre-commit": "^1.2.2",
 "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
