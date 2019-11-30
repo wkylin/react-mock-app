@@ -23,4 +23,18 @@ function distinctObj(arrObj, keyName) {
   }, []);
 }
 
+export function getNumberParts(number) {
+  const regNumber = /(\d+)\.(\d+)/;
+  const matches = number.toString().match(regNumber);
+  if (matches === null) {
+    return null;
+  }
+  const [, integer, fractional] = matches;
+  return {
+    integer,
+    fractional,
+  };
+}
+
+
 export default distinctObj;
