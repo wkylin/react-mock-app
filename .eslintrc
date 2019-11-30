@@ -42,7 +42,8 @@
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default-member": "off",
-    "func-names": "off"
+    "func-names": "off",
+    "consistent-return": "off"
   },
   "extends": "airbnb",
   "parser": "babel-eslint"
