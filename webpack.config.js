@@ -18,4 +18,8 @@ module.exports = {
       }),
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+    index: 'index.html'
+  }
 };

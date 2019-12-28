@@ -2,7 +2,7 @@
   "name": "react-mock-app",
   "version": "0.1.0",
   "private": true,
-  "license": "",
+  "license": "MIT",
   "homepage": "./",
   "scripts": {
     "start:dev": "env-cmd -f .env.development react-app-rewired start",
