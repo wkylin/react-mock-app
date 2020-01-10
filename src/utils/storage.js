@@ -27,3 +27,7 @@ export function randomNum(minNum, maxNum) {
 export function toThousands(num) {
   return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
 }
+
+export function randomHexColor() {
+  return `#${(`0000${(Math.random() * 0x1000000 << 0).toString(16)}`).substr(-6)}`;
+}

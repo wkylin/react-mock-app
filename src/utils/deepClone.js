@@ -12,8 +12,9 @@ function deepClone(target) {
     result = [];
   } else {
     result = target;
-    return;
   }
+  
+
   for (const i in target) {
     valueType = checkType(target[i]);
     if (valueType === 'Object' || valueType === 'Array') {
