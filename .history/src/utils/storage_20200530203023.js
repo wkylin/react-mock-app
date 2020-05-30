@@ -29,24 +29,6 @@ export function toThousands(num) {
 }
 
 export function randomHexColor() {
-  // eslint-disable-next-line no-bitwise
   return `#${(`0000${(Math.random() * 0x1000000 << 0).toString(16)}`).substr(-6)}`;
 }
 
-export const scrollTo = (ref) => {
-  window.scroll({
-    top: ref.current.offsetTop,
-    behavior: 'smooth',
-  });
-};
-
-//
-//  shouldComponentUpdate( nextProps,nextState) {
-//         if(nextState.data === this.state.data)
-//             return false
-//         return true
-//     }
-
-// componentDidUpdate(prevProps, prevState) {
-//     console.log('Component did update!')
-//   }

@@ -46,7 +46,3 @@ export const scrollTo = (ref) => {
 //             return false
 //         return true
 //     }
-
-// componentDidUpdate(prevProps, prevState) {
-//     console.log('Component did update!')
-//   }

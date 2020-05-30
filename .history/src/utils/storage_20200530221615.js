@@ -40,13 +40,3 @@ export const scrollTo = (ref) => {
   });
 };
 
-//
-//  shouldComponentUpdate( nextProps,nextState) {
-//         if(nextState.data === this.state.data)
-//             return false
-//         return true
-//     }
-
-// componentDidUpdate(prevProps, prevState) {
-//     console.log('Component did update!')
-//   }
